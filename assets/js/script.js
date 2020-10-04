@@ -15,20 +15,26 @@ dateTime();
 
 //use JQUERY to manipulate DOM
 $(document).ready(function () {
+    //listen for a save button click
     $(saveButonEl).on("click", function () {
-        console.log(saveButonEl);
+       //get the value of the text input
+       var event = $(this)
+       .siblings(".description")
+       .val();
+
+       var time = $(this)
+       .parent()
+       .attr("id");
+
+        //save value to local storage
+    localStorage.setItem(event, time );
     });
 });
 //save text in local storage--use seperate functions for each hour??
+//figure out how to get current hour 
 
-//create schedule
-    //first make the layout of the tasks-standard business hours
+//loop over current time blocks
 
+//how to see if we've moved past current time
 
-
-
-//display current date
-    //use moments.js for date and time 
-
-
-//save JSON
+//bring saved data from localstorage
