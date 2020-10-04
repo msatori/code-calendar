@@ -1,40 +1,52 @@
 //variables
-var task = [];
+
 var currentDayEl = document.getElementById("currentDay");
 var saveButonEl = document.getElementById("button");
+var textArea = document.getElementById("textInput");
 
+//create a function to display current time
+function updateTime() {
+    var currentTime = moment().hours();
+    console.log(currentTime);
+};
 
-
-//display current day-make function
-dateTime = function () {
+$(document).ready(function (event) {
+    
+    //display current day-make function
     var displayDate = moment().format('MMMM Do YYYY');
     currentDayEl.textContent = displayDate;
     console.log(displayDate);
-};
-dateTime();
 
-//use JQUERY to manipulate DOM
-$(document).ready(function () {
-    //listen for a save button click
-    $(saveButonEl).on("click", function () {
-       //get the value of the text input
-       var event = $(this)
-       .siblings(".description")
-       .val();
 
-       var time = $(this)
-       .parent()
-       .attr("id");
+    $(".saveBtn").on("click", function () {
+        //save text input to local storage
+        var text = document.getElementById("textInput").value;
+        var time = $(this).parent().attr("id")
 
-        //save value to local storage
-    localStorage.setItem(event, time );
+        localStorage.setItem(text, time);
+        event.preventDefault();
     });
+    //call current time
+    updateTime();
+
+
+    //create a loop for the time blocks
+
+    $(".time-block").on("click", function(text, time) {
+        
+    })
+
 });
+
+
+
+
 //save text in local storage--use seperate functions for each hour??
-//figure out how to get current hour 
 
-//loop over current time blocks
 
-//how to see if we've moved past current time
+
+
+
+//
 
 //bring saved data from localstorage
