@@ -38,13 +38,16 @@ $(document).ready(function (event) {
             var timeSlot = i = 0; times.length; i++
             if (timeSlot < currentTime) {
                 $(this).addClass("past");
-                $(this).removeClass("present", "future");
+                $(this).removeClass("present");
+                $(this).removeClass("future")
             } else if (timeSlot === currentTime) {
                 $(this).addClass("present");
-                $(this).removeClass("past", "future");
+                $(this).removeClass("past");
+                $(this).removeClass("future")
             } else {
                 $(this).addClass("present");
-                $(this).removeClass("past", present);
+                $(this).removeClass("past");
+                $(this).removeClass("present")
             }
         });
 
