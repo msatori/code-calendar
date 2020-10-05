@@ -27,7 +27,7 @@ $(document).ready(function (event) {
         arrayItems.push(time);
         console.log(arrayItems);
 
-
+        
     });
 
     //loop through times to set color
